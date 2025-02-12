@@ -18,3 +18,11 @@ def egg_timer():
         print("Invalid choice! Please select a valid option.")
         return 
         
+    print(f"Starting timer for {cook_time} minutes...")
+    for remaining_time in range(cook_time *60, 0, -1):
+        minutes, seconds = divmod(remaining_time, 60)
+        time.sleep(1)
+        print(f"Time remaining: {minutes: 02}:{seconds:02}", end="\r")
+    print("\Your egg is ready! Enjoy!")
+
+egg_timer()
